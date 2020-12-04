@@ -25,7 +25,7 @@
 	//접속 
 	String url="jdbc:oracle:thin:@localhost:1521:XE";
 	String user="user1104";
-	String password="user1104";
+	String password="1234";
 	
 	Connection con = DriverManager.getConnection(url, user, password);
 	PreparedStatement pstmt=null;
@@ -35,7 +35,7 @@
 	}else{
 		out.print("접속 성공");
 		//쿼리문 수행 
-		String sql="select * from shop_member where mid=? and pass=?";
+		String sql="select * from registmember where member_id=? and member_password=?";
 		pstmt=con.prepareStatement(sql); //쿼리 준비
 		pstmt.setString(1, id);
 		pstmt.setString(2, pass);
